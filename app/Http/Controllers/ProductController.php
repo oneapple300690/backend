@@ -21,16 +21,7 @@ class ProductController extends Controller
 
     function update(Request $req)
     {
-        // $today = date('d-m-Y H:i:s');
-        // echo $today;
-        // $data = Product::where('id', $req->input('id'))
-        //     ->where(function ($query) use ($today) {
-        //         return $query->whereDate('updated_at', '!=', $today)
-        //             ->orWhere('updated_at', null);
-        //     })
-        //     ->get();
-
-        // return $data;
+        // No need to store image if no file is slected
         $file_path = '';
         if($req->hasFile('prod_file')){
             $file_path = $req->file('prod_file')->store('products');
